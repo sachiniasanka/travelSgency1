@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Client</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Panagea - Premium site template for travel agencies, hotels and restaurant listing.">
+  <meta name="author" content="Ansonika">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" type="image/x-icon" href="assets/img/apple-touch-icon-57x57-precomposed.png">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="assets/img/apple-touch-icon-144x144-precomposed.png">
+  <link href="#" id="colors" rel="stylesheet">
+
+</head>
+<body>
+  <app-root></app-root>
+</body>
+<script defer src="assets/js/jquery.flexslider.js"></script>
+<script>
+  $(window).load(function() {
+    'use strict';
+    $('#carousel_slider').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 280,
+      itemMargin: 25,
+      asNavFor: '#slider'
+    });
+    $('#carousel_slider ul.slides li').on('mouseover', function() {
+      $(this).trigger('click');
+    });
+    $('#slider').flexslider({
+      animation: "fade",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel_slider",
+      start: function(slider) {
+        $('body').removeClass('loading');
+      }
+    });
+  });
+</script>
+<script defer src="assets/js/weather_home.js"></script>
+
+
+
+</html>
